@@ -1,0 +1,18 @@
+gorb: main.o student.o students.o course.o courses.o enroll.o enrolls.o
+	g++ -o gorb main.o student.o students.o course.o courses.o enroll.o enrolls.o
+main.o: main.cpp students.h courses.h enrolls.h
+	g++ -c main.cpp
+student.o: student.cpp student.h
+	g++ -c student.cpp
+students.o: students.cpp students.h
+	g++ -c students.cpp
+course.o: course.cpp course.h
+	g++ -c course.cpp
+courses.o: courses.cpp courses.h
+	g++ -c courses.cpp
+enroll.o: enroll.cpp enroll.h
+	g++ -c enroll.cpp
+enrolls.o: enrolls.cpp enrolls.h
+	g++ -c enrolls.cpp
+clean:
+	rm *.o
